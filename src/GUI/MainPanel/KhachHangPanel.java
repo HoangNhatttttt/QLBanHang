@@ -1,0 +1,511 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
+ */
+package GUI.MainPanel;
+import javax.swing.table.JTableHeader;
+import BUS.KhachHangBUS;
+import DTO.KhachHangDTO;
+import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.EmptyBorder;
+/**
+ *
+ * @author drunkenpipe
+ */
+public class KhachHangPanel extends javax.swing.JPanel {
+    KhachHangBUS khBus = new KhachHangBUS();
+    /**
+     * Creates new form KhachHangPanel
+     */
+    public KhachHangPanel() {
+        initComponents();
+        applyStyles();
+        setLayout(new BorderLayout());
+        customizeTable();
+        updateTable();
+        addComponentsToLayout();
+    }
+    private void applyStyles() {
+        // panel
+        setBackground(Color.WHITE);
+
+        // title label
+        label1.setFont(new Font("Segoe UI", Font.BOLD, 26));
+        label1.setForeground(new Color(44, 62, 80));
+
+        // buttons
+        for (JButton b : new JButton[]{add, remove, edit}) {
+            b.setBackground(new Color(109, 169, 216));
+            b.setForeground(Color.WHITE);
+            b.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+            b.setFocusPainted(false);
+            b.setBorder(new EmptyBorder(8, 16, 8, 16));
+        }
+
+        // search field
+        search.setPreferredSize(new Dimension(200, 32));
+        search.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        search.setBorder(BorderFactory.createCompoundBorder(
+            BorderFactory.createLineBorder(new Color(200,200,200), 1),
+            new EmptyBorder(4, 8, 4, 8)
+        ));
+
+        // combo box
+        searchOption.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+        searchOption.setBackground(Color.WHITE);
+        searchOption.setBorder(BorderFactory.createLineBorder(new Color(200,200,200)));
+
+        // table styling
+        jScrollPane1.getViewport().setBackground(Color.WHITE);
+        bangKH.setShowGrid(true);
+        bangKH.setGridColor(new Color(240,240,240));
+        bangKH.setRowHeight(36);
+        bangKH.setFont(new Font("Segoe UI", Font.PLAIN, 14));
+    }
+    private void addComponentsToLayout() {
+        this.setLayout(new BorderLayout(10, 10));
+        JPanel buttonPanelCRUD = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        buttonPanelCRUD.add(add);
+        buttonPanelCRUD.add(remove);
+        buttonPanelCRUD.add(edit);
+
+        JPanel buttonPanelsearch = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        buttonPanelsearch.add(jPanel1);
+        buttonPanelsearch.add(search);
+
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.X_AXIS));
+        buttonPanel.add(buttonPanelsearch);
+        buttonPanel.add(buttonPanelCRUD);
+
+        // Optional: wrap all top stuff (label + buttonPanel) in a vertical panel
+        JPanel top = new JPanel();
+        top.setLayout(new BoxLayout(top, BoxLayout.Y_AXIS));
+        top.add(label1);
+        top.add(buttonPanel);
+
+        this.add(top, BorderLayout.NORTH);      // Top controls
+        this.add(jScrollPane1, BorderLayout.CENTER);  // Table fills remaining space
+    }
+    private void updateTable() {    //call this whenever database changed
+        ArrayList<KhachHangDTO> list = khBus.getAllKhachHang();
+
+        // Clear the table
+        DefaultTableModel model = (DefaultTableModel) bangKH.getModel();
+        model.setRowCount(0);  // Clear any existing data
+
+        // Add rows to the table
+        for (KhachHangDTO nv : list) {
+            model.addRow(new Object[]{nv.getMaKH(), nv.getHo() + " " + nv.getTen(),nv.getDiaChi(), nv.getSDT()});
+        }
+    }
+    private void customizeTable() {
+        // Change the background color of the column headers
+        JTableHeader header = bangKH.getTableHeader();
+        header.setBackground(new java.awt.Color(44, 62, 80)); // dark blue background
+        header.setForeground(new java.awt.Color(0,0,0)); // light text color
+
+        // Optionally set custom fonts for column headers
+        header.setFont(new java.awt.Font("Dialog", java.awt.Font.BOLD, 14));
+
+        // Set the preferred column widths if needed
+        bangKH.getColumnModel().getColumn(0).setPreferredWidth(100); // Column 1: "Mã khách hàng"
+        bangKH.getColumnModel().getColumn(1).setPreferredWidth(150); // Column 2: "Tên khách hàng"
+        bangKH.getColumnModel().getColumn(2).setPreferredWidth(100); // Column 3: "Địa chỉ"
+        bangKH.getColumnModel().getColumn(3).setPreferredWidth(120); // Column 4: "SDT"
+    }
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        label1 = new java.awt.Label();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        bangKH = new javax.swing.JTable();
+        add = new javax.swing.JButton();
+        remove = new javax.swing.JButton();
+        edit = new javax.swing.JButton();
+        search = new javax.swing.JTextField();
+        jPanel1 = new javax.swing.JPanel();
+        searchOption = new javax.swing.JComboBox<>();
+
+        setBackground(new java.awt.Color(255, 255, 255));
+        setPreferredSize(new java.awt.Dimension(1330, 750));
+
+        label1.setAlignment(java.awt.Label.CENTER);
+        label1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        label1.setName(""); // NOI18N
+        label1.setText("Quản lí khách hàng");
+
+        bangKH.setBackground(new java.awt.Color(255, 255, 153));
+        bangKH.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Mã khách hàng", "Tên khách hàng", "Địa chỉ", "Số điện thoại"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        bangKH.setRowHeight(40);
+        bangKH.setSelectionBackground(new java.awt.Color(153, 255, 255));
+        bangKH.setShowGrid(true);
+        jScrollPane1.setViewportView(bangKH);
+
+        add.setBackground(new java.awt.Color(255, 255, 255));
+        add.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        add.setForeground(new java.awt.Color(0, 0, 0));
+        add.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/plus.png"))); // NOI18N
+        add.setText("Thêm");
+        add.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addActionPerformed(evt);
+            }
+        });
+
+        remove.setBackground(new java.awt.Color(255, 255, 255));
+        remove.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        remove.setForeground(new java.awt.Color(0, 0, 0));
+        remove.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/delete.png"))); // NOI18N
+        remove.setText("Xóa");
+        remove.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeActionPerformed(evt);
+            }
+        });
+
+        edit.setBackground(new java.awt.Color(255, 255, 255));
+        edit.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        edit.setForeground(new java.awt.Color(0, 0, 0));
+        edit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/GUI/Image/edit.png"))); // NOI18N
+        edit.setText("Chỉnh sửa");
+        edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editActionPerformed(evt);
+            }
+        });
+
+        search.setBackground(new java.awt.Color(255, 255, 255));
+        search.setForeground(new java.awt.Color(0, 0, 0));
+        search.setPreferredSize(new java.awt.Dimension(200, 30));
+        search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchActionPerformed(evt);
+            }
+        });
+        search.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                searchKeyPressed(evt);
+            }
+        });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Tìm kiếm"));
+        jPanel1.setForeground(new java.awt.Color(0, 0, 0));
+
+        searchOption.setBackground(new java.awt.Color(204, 204, 204));
+        searchOption.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        searchOption.setForeground(new java.awt.Color(0, 0, 0));
+        searchOption.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã", "Họ", "Tên", "Địa chỉ", "Số điện thoại" }));
+        searchOption.setSelectedIndex(2);
+        searchOption.setToolTipText("");
+        searchOption.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchOptionActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(searchOption, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(searchOption, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 900, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 430, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(add)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(remove)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(edit)
+                .addGap(262, 262, 262)
+                .addComponent(search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(337, 337, 337))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(393, 393, 393)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(10, 10, 10)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 143, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(add)
+                        .addComponent(remove)
+                        .addComponent(edit))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(search, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 433, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void addActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addActionPerformed
+        JTextField tfMaKH = new JTextField("0"); // Default to 0
+        JTextField tfHo = new JTextField();
+        JTextField tfTen = new JTextField();
+        JTextField tfDiaChi = new JTextField();
+        JTextField tfSDT = new JTextField();
+
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.add(new JLabel("Mã khách hàng (0 sẽ mã được tự động tạo):")); // Caption with instruction
+        panel.add(tfMaKH);
+        panel.add(new JLabel("Họ:"));
+        panel.add(tfHo);
+        panel.add(new JLabel("Tên:"));
+        panel.add(tfTen);
+        panel.add(new JLabel("Địa chỉ:"));
+        panel.add(tfDiaChi);
+        panel.add(new JLabel("Số Điện thoại:"));
+        panel.add(tfSDT);
+
+        int result = JOptionPane.showConfirmDialog(this, panel, "Thêm khách hàng mới",
+                JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+        if (result == JOptionPane.OK_OPTION) {
+            String maKH = tfMaKH.getText().trim();
+            String ho = tfHo.getText().trim();
+            String ten = tfTen.getText().trim();
+            String DiaChi = tfDiaChi.getText().trim();
+            String SDT = tfSDT.getText().trim();
+
+            // Validate the inputs
+            if (ho.isEmpty() || ten.isEmpty() || maKH.isEmpty() || DiaChi.isEmpty() || SDT.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin.");
+                return;
+            }
+            // Check if SDT is numeric
+            if (!SDT.matches("\\d+")) {
+                JOptionPane.showMessageDialog(this, "Số điện thoại chỉ được chứa chữ số.");
+                return;
+            }
+            // Create the DTO with the updated data
+            KhachHangDTO newKH = new KhachHangDTO(maKH, ho, ten, DiaChi, SDT);
+
+            // Add the new employee
+            boolean success = khBus.addKhachHang(newKH);
+
+            if (success) {
+                JOptionPane.showMessageDialog(this, "Đã thêm khách hàng mới thành công.");
+                updateTable();
+            } else {
+                JOptionPane.showMessageDialog(this, "Thêm khách hàng thất bại. Có thể Mã KH đã tồn tại.");
+            }
+        }
+    }//GEN-LAST:event_addActionPerformed
+
+    private void removeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeActionPerformed
+        // Get the selected row index
+        int selectedRow = bangKH.getSelectedRow();
+
+        // Check if a row is selected
+        if (selectedRow != -1) {
+            // Retrieve the MaKH from the selected row as a String
+            String maKH = (String) bangKH.getValueAt(selectedRow, 0);
+
+            // Confirm deletion
+            int confirmation = JOptionPane.showConfirmDialog(
+                this,
+                "Bạn có muốn xóa khách hàng với mã khách hàng: " + maKH + "?",
+                "Xác nhận xóa.",
+                JOptionPane.YES_NO_OPTION
+            );
+
+            // If user confirmed deletion
+            if (confirmation == JOptionPane.YES_OPTION) {
+                // Use the existing khBus object, not a new one
+                boolean success = false;
+                success = khBus.deleteKhachHang(maKH);
+
+                // Check if the deletion was successful
+                if (success) {
+                    JOptionPane.showMessageDialog(this, "Đã xóa thành công khách hàng.");
+                    updateTable();  // Refresh the table after deletion
+                } else {
+                    JOptionPane.showMessageDialog(this, "Thêm Khách hàng thất bại. Có thể Mã KH đã tồn tại.");
+            }
+            } else {
+                JOptionPane.showMessageDialog(this, "Đã hủy xóa khách hàng");
+            }}
+            else {
+            // No row selected
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn một khách hàng để xóa.");
+        }
+    }//GEN-LAST:event_removeActionPerformed
+
+    private void editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editActionPerformed
+        int selectedRow = bangKH.getSelectedRow();
+
+        if (selectedRow != -1) {
+            String maKH = (String) bangKH.getValueAt(selectedRow, 0);
+            KhachHangDTO existingKH = khBus.getKhachHangByID(maKH);
+
+            if (existingKH != null) {
+                // Leave MaKH field blank but show label
+                JTextField tfMaKH = new JTextField(); 
+                tfMaKH.setText(""); // intentionally blank
+                tfMaKH.setEditable(false);  // still non-editable
+                tfMaKH.setEnabled(false);
+                JTextField tfHo = new JTextField(existingKH.getHo());
+                JTextField tfTen = new JTextField(existingKH.getTen());
+                JTextField tfDiaChi = new JTextField(existingKH.getDiaChi());
+                JTextField tfSDT = new JTextField(existingKH.getSDT());
+                JPanel panel = new JPanel(new GridLayout(0, 1));
+                panel.add(new JLabel("Mã KH: (Không thể sửa)"));
+                panel.add(tfMaKH);
+                panel.add(new JLabel("Họ:"));
+                panel.add(tfHo);
+                panel.add(new JLabel("Tên:"));
+                panel.add(tfTen);
+                panel.add(new JLabel("Địa chỉ:"));
+                panel.add(tfDiaChi);
+                panel.add(new JLabel("Số điện thoại:"));
+                panel.add(tfSDT);
+
+                int result = JOptionPane.showConfirmDialog(this, panel, "Chỉnh sửa thông tin khách hàng",
+                        JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+
+                if (result == JOptionPane.OK_OPTION) {
+                    
+                        String ho = tfHo.getText().trim();
+                        String ten = tfTen.getText().trim();
+                        String diachi = tfDiaChi.getText().trim();
+                        String sdt = tfSDT.getText().trim();
+
+                        if (ho.isEmpty() || ten.isEmpty() || diachi.isEmpty() || sdt.isEmpty()) {
+                            JOptionPane.showMessageDialog(this, "Vui lòng điền đầy đủ thông tin.");
+                            return;
+                        }
+                        if (!sdt.matches("\\d+")) {
+                            JOptionPane.showMessageDialog(this, "Số điện thoại chỉ được chứa chữ số.");
+                            return;
+                        }
+                        KhachHangDTO updatedKH = new KhachHangDTO(maKH, ho, ten, diachi, sdt);
+
+                        boolean updateSuccess = khBus.updateKhachHang(updatedKH);
+                        if (updateSuccess) {
+                            JOptionPane.showMessageDialog(this, "Đã chỉnh sửa thông tin khách hàng thành công.");
+                            updateTable();  // Refresh table
+                        } else {
+                            JOptionPane.showMessageDialog(this, "Chỉnh sửa thất bại.");
+                        }
+                    }
+            } else {
+                JOptionPane.showMessageDialog(this, "Không tìm thấy khách hàng.");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Vui lòng chọn một khách hàng để chỉnh sửa.");
+        }
+    }//GEN-LAST:event_editActionPerformed
+
+    private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
+        
+    }//GEN-LAST:event_searchActionPerformed
+
+    private void searchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_searchKeyPressed
+        String keyword = search.getText();  // Get the search keyword
+        KhachHangBUS khBus = new KhachHangBUS();
+
+        ArrayList<KhachHangDTO> results = null;
+        String searchType = searchOption.getSelectedItem().toString();
+        if(!searchType.isEmpty()){
+            results = khBus.search(keyword, searchOption.getSelectedItem().toString());
+            // Update table with search results
+            DefaultTableModel model = (DefaultTableModel) bangKH.getModel();
+            model.setRowCount(0);  // Clear the table
+
+            for (KhachHangDTO kh : results) {
+                model.addRow(new Object[]{kh.getMaKH(), kh.getHo() + " " + kh.getTen(), kh.getDiaChi(), kh.getSDT()});
+            }
+        }
+        else
+            updateTable();
+    }//GEN-LAST:event_searchKeyPressed
+
+    private void searchOptionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchOptionActionPerformed
+
+    }//GEN-LAST:event_searchOptionActionPerformed
+    public static void main(String[] args){
+        javax.swing.SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+            javax.swing.JFrame frame = new javax.swing.JFrame("Test ");
+            frame.setDefaultCloseOperation(javax.swing.JFrame.EXIT_ON_CLOSE);
+            frame.getContentPane().add(new KhachHangPanel());
+            frame.pack(); // Optional: sizes the frame to fit preferred size of contents
+            frame.setLocationRelativeTo(null); // Center the frame
+            frame.setVisible(true); // Show the frame
+        }
+    });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton add;
+    private javax.swing.JTable bangKH;
+    private javax.swing.JButton edit;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private java.awt.Label label1;
+    private javax.swing.JButton remove;
+    private javax.swing.JTextField search;
+    private javax.swing.JComboBox<String> searchOption;
+    // End of variables declaration//GEN-END:variables
+}

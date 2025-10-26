@@ -37,7 +37,7 @@ private JButton btnLogout; //e
         initComponents();
         setLocation(35, 35);
         setTitle("Dien Tu Store");
-        setSize(1200, 600);
+        setSize(1250, 650);
         hienThiMenuTheoPhanQuyen();
     }
     

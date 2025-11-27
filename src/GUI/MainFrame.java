@@ -88,6 +88,7 @@ private JButton btnLogout; //e
     private void hienThiMenuTheoPhanQuyen() {
     String chiTietQuyen = quyenLogin.getChiTietQuyen();
 // TODO: THÊM CHỨC NĂNG TRANG Ở NGAY ĐÂY, new [tênfile]
+    themChucNang("Kho hàng", "qlKhoHang", new KhoHangPanel());
     themChucNang("Bán hàng", "qlBanHang", new JPanelBanHang());
       themChucNang("Nhập hàng", "qlNhapHang", new NhapHangForm());
     themChucNang("Sản phẩm", "qlSanPham", new SanPhamGUI());

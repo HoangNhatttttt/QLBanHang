@@ -6,7 +6,7 @@ package GUI;
 
 import BUS.QuanLyQuyenBUS;
 import DTO.QuyenDTO;
-import GUI.MainPanel.JPanelQuyen;
+import GUI.MainPanel.Quyen;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
@@ -16,13 +16,13 @@ import javax.swing.JOptionPane;
  */
 public class ThemQuyenForm extends javax.swing.JFrame {
 
-    private JPanelQuyen parentPanel;
+    private Quyen parentPanel;
     private QuanLyQuyenBUS qlqBUS = new QuanLyQuyenBUS();
     
     /**
      * Creates new form SuaQuyenForm
      */
-    public ThemQuyenForm(JPanelQuyen parent) {
+    public ThemQuyenForm(Quyen parent) {
         initComponents();
         this.parentPanel = parent;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -363,8 +363,8 @@ public class ThemQuyenForm extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                // Tạo JPanelQuyen giả lập cho việc testing
-                JPanelQuyen panel = new JPanelQuyen();
+                // Tạo Quyen giả lập cho việc testing
+                Quyen panel = new Quyen();
                 new ThemQuyenForm(panel).setVisible(true);
             }
         });

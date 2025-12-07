@@ -6,81 +6,64 @@ package GUI;
 
 import GUI.MainPanel.TaiKhoan;
 import javax.swing.JOptionPane;
-import javax.swing.table.DefaultTableModel;
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author welcome
  */
-public class FormChonNV extends javax.swing.JFrame {
+public class FormChonQuyen extends javax.swing.JFrame {
 
     private ThemTaiKhoan themForm;
     private SuaTaiKhoanForm suaForm;
     private boolean isThemMode = false;
 
     /**
-     * Creates new form FormChonNV
+     * Creates new form FromChonQuyen
      */
-    public FormChonNV(ThemTaiKhoan parent) {
+    public FormChonQuyen(ThemTaiKhoan parent) {
         initComponents();
         this.themForm = parent;
         this.isThemMode = true;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        loadTableNhanVien();
+        loadTableQuyen();
         
         // Xử lý nút chọn
         btnChon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 int selectedRow = jTable1.getSelectedRow();
                 if (selectedRow >= 0) {
-                    String maNV = jTable1.getValueAt(selectedRow, 0).toString();
-                    themForm.setMaNV(maNV);
+                    String maQuyen = jTable1.getValueAt(selectedRow, 1).toString();
+                    themForm.setMaQuyen(maQuyen);
                     dispose();
                 } else {
-                    JOptionPane.showMessageDialog(FormChonNV.this, "Vui lòng chọn một nhân viên!");
+                    JOptionPane.showMessageDialog(FormChonQuyen.this, "Vui lòng chọn một quyền!");
                 }
             }
         });
     }
 
-    public FormChonNV(SuaTaiKhoanForm parent) {
+    public FormChonQuyen(SuaTaiKhoanForm parent) {
         initComponents();
         this.suaForm = parent;
         this.isThemMode = false;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        loadTableNhanVien();
+        loadTableQuyen();
         
         // Xử lý nút chọn
         btnChon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 int selectedRow = jTable1.getSelectedRow();
                 if (selectedRow >= 0) {
-                    String maNV = jTable1.getValueAt(selectedRow, 0).toString();
-                    suaForm.setMaNV(maNV);
+                    String maQuyen = jTable1.getValueAt(selectedRow, 1).toString();
+                    suaForm.setMaQuyen(maQuyen);
                     dispose();
                 } else {
-                    JOptionPane.showMessageDialog(FormChonNV.this, "Vui lòng chọn một nhân viên!");
+                    JOptionPane.showMessageDialog(FormChonQuyen.this, "Vui lòng chọn một quyền!");
                 }
             }
         });
-    }
-
-    private void loadTableNhanVien() {
-        BUS.NhanVienBUS nvBUS = new BUS.NhanVienBUS();
-        ArrayList<DTO.NhanVienDTO> danhSach = nvBUS.getAllNhanVien();
-        
-        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
-        model.setRowCount(0); // Xóa dữ liệu cũ
-        
-        for (DTO.NhanVienDTO nv : danhSach) {
-            model.addRow(new Object[]{
-                nv.getMaNV(),
-                nv.getHo(),
-                nv.getTen(),
-                nv.getTrangThai() == 0 ? "Đang làm việc" : "Đã nghỉ việc"
-            });
-        }
     }
 
     /**
@@ -111,17 +94,16 @@ public class FormChonNV extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Mã nhân viên", "Họ", "Tên", "Trạng thái"
+                "STT", "Mã quyền", "Tên quyền", "Chi tiết quyền"
             }
         ));
         jScrollPane1.setViewportView(jTable1);
 
         btnChon.setText("Chọn");
-        btnChon.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Tìm Kiếm "));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Tìm kiếm "));
 
-        jLabel1.setText("Tên nhân viên:");
+        jLabel1.setText("Tên quyền:");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -130,22 +112,21 @@ public class FormChonNV extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtTen, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(36, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(txtTen, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(txtTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGap(23, 23, 23)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
-        btnLamMoi.setText("Làm mới ");
-        btnLamMoi.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLamMoi.setText("Làm mới");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -155,29 +136,30 @@ public class FormChonNV extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(332, 332, 332)
+                        .addGap(266, 266, 266)
                         .addComponent(btnChon))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(119, 119, 119)
+                        .addGap(88, 88, 88)
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnLamMoi)))
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(28, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(16, 16, 16)))
-                .addGap(13, 13, 13)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                        .addComponent(btnLamMoi, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnChon)
-                .addContainerGap())
+                .addGap(13, 13, 13))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -211,14 +193,16 @@ public class FormChonNV extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormChonNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormChonQuyen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormChonNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormChonQuyen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormChonNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormChonQuyen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormChonNV.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(FormChonQuyen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
@@ -227,10 +211,28 @@ public class FormChonNV extends javax.swing.JFrame {
             public void run() {
                 // Tạo instance giả lập cho việc chạy thử
                 TaiKhoan panel = new TaiKhoan();
-                SuaTaiKhoanForm suaTK = new SuaTaiKhoanForm(panel, "admin", "123456", "1", "Q1");
-                new FormChonNV(suaTK).setVisible(true);
+                SuaTaiKhoanForm suaForm = new SuaTaiKhoanForm(panel, "admin", "123456", "1", "Q1");
+                new FormChonQuyen(suaForm).setVisible(true);
             }
         });
+    }
+
+    private void loadTableQuyen() {
+        BUS.QuanLyQuyenBUS quyenBUS = new BUS.QuanLyQuyenBUS();
+        ArrayList<DTO.QuyenDTO> danhSach = quyenBUS.getDsq();
+        
+        DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
+        model.setRowCount(0); // Xóa dữ liệu cũ
+        
+        int stt = 1;
+        for (DTO.QuyenDTO quyen : danhSach) {
+            model.addRow(new Object[]{
+                stt++,
+                quyen.getMaQuyen(),
+                quyen.getTenQuyen(),
+                quyen.getChiTietQuyen()
+            });
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

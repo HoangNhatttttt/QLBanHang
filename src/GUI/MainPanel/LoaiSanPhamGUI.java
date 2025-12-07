@@ -7,8 +7,8 @@ import javax.swing.table.DefaultTableModel;
 import DTO.LoaiSanPhamDTO;
 import DAO.LoaiSanPhamDAO;
 import BUS.LoaiSanPhamBUS;
-import GUI.FromSuaLSP;
-import GUI.FromThemLSP;
+import GUI.FormSuaLSP;
+import GUI.FormThemLSP;
 import java.util.List;
 import javax.swing.JOptionPane;
 /**
@@ -179,7 +179,7 @@ public class LoaiSanPhamGUI extends javax.swing.JPanel {
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
 
-        FromThemLSP frm = new FromThemLSP();
+        FormThemLSP frm = new FormThemLSP();
         frm.setLocationRelativeTo(null); // căn giữa
         frm.setVisible(true);
         
@@ -216,7 +216,7 @@ public class LoaiSanPhamGUI extends javax.swing.JPanel {
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
         // TODO add your handling code here:
-        FromSuaLSP frm = new FromSuaLSP();
+        FormSuaLSP frm = new FormSuaLSP();
         frm.setLocationRelativeTo(null); // căn giữa
         frm.setVisible(true);
         

@@ -2,17 +2,17 @@ package GUI;
 
 import BUS.QuanLyTaiKhoanBUS;
 import javax.swing.JOptionPane;
-import GUI.MainPanel.JPanelTaiKhoan;
+import GUI.MainPanel.TaiKhoan;
 import javax.swing.JTextField;
 import DTO.TaiKhoanDTO;
 
 public class SuaTaiKhoanForm extends javax.swing.JFrame {
     
-    private JPanelTaiKhoan parentPanel;
+    private TaiKhoan parentPanel;
     private String originalUsername;
     QuanLyTaiKhoanBUS qltkBUS = new QuanLyTaiKhoanBUS();
     
-    public SuaTaiKhoanForm(JPanelTaiKhoan parent, String username, String password, String maNV, String maQuyen) {
+    public SuaTaiKhoanForm(TaiKhoan parent, String username, String password, String maNV, String maQuyen) {
         initComponents();
         this.parentPanel = parent;
         this.originalUsername = username;
@@ -41,7 +41,7 @@ public class SuaTaiKhoanForm extends javax.swing.JFrame {
         
         btnChonMaQuyen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FromChonQuyen formChonQuyen = new FromChonQuyen(SuaTaiKhoanForm.this);
+                FormChonQuyen formChonQuyen = new FormChonQuyen(SuaTaiKhoanForm.this);
                 formChonQuyen.setLocationRelativeTo(null);
                 formChonQuyen.setVisible(true);
             }

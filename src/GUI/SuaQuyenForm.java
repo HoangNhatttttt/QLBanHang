@@ -5,8 +5,10 @@
 package GUI;
 
 import BUS.QuanLyQuyenBUS;
+import BUS.QuanLyTaiKhoanBUS;
 import DTO.QuyenDTO;
-import GUI.MainPanel.JPanelQuyen;
+import DTO.TaiKhoanDTO;
+import GUI.MainPanel.Quyen;
 import javax.swing.JCheckBox;
 import javax.swing.JOptionPane;
 
@@ -16,14 +18,14 @@ import javax.swing.JOptionPane;
  */
 public class SuaQuyenForm extends javax.swing.JFrame {
 
-    private JPanelQuyen parentPanel;
+    private Quyen parentPanel;
     private String originalMaQuyen;
     private QuanLyQuyenBUS qlqBUS = new QuanLyQuyenBUS();
     
     /**
      * Creates new form SuaQuyenForm
      */
-    public SuaQuyenForm(JPanelQuyen parent, String maQuyen, String tenQuyen, String chiTietQuyen) {
+    public SuaQuyenForm(Quyen parent, String maQuyen, String tenQuyen, String chiTietQuyen) {
         initComponents();
         this.parentPanel = parent;
         this.originalMaQuyen = maQuyen;
@@ -79,6 +81,7 @@ public class SuaQuyenForm extends javax.swing.JFrame {
         jCheckBox10 = new javax.swing.JCheckBox();
         jCheckBox11 = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
+        jCheckBox13 = new javax.swing.JCheckBox();
         btnHuy = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
 
@@ -91,29 +94,13 @@ public class SuaQuyenForm extends javax.swing.JFrame {
 
         jLabel1.setText("Mã quyền:");
 
-        txtMaQuyen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMaQuyenActionPerformed(evt);
-            }
-        });
-
         jLabel2.setText("Tên quyền:");
 
         jLabel3.setText("Chi tiết quyền:");
 
         jCheckBox1.setText("Bán hàng");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
-            }
-        });
 
         jCheckBox2.setText("Nhập hàng");
-        jCheckBox2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox2ActionPerformed(evt);
-            }
-        });
 
         jCheckBox3.setText("Sản phẩm");
 
@@ -132,13 +119,10 @@ public class SuaQuyenForm extends javax.swing.JFrame {
         jCheckBox10.setText("Nhà cung cấp");
 
         jCheckBox11.setText("Phiếu nhập");
-        jCheckBox11.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox11ActionPerformed(evt);
-            }
-        });
 
         jCheckBox12.setText("Thống kê");
+
+        jCheckBox13.setText("Phân quyền");
 
         btnHuy.setText("Hủy");
 
@@ -187,8 +171,9 @@ public class SuaQuyenForm extends javax.swing.JFrame {
                     .addComponent(jCheckBox11)
                     .addComponent(jCheckBox10)
                     .addComponent(jCheckBox5)
-                    .addComponent(jCheckBox12))
-                .addContainerGap(77, Short.MAX_VALUE))
+                    .addComponent(jCheckBox12)
+                    .addComponent(jCheckBox13))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -210,22 +195,24 @@ public class SuaQuyenForm extends javax.swing.JFrame {
                     .addComponent(jCheckBox1)
                     .addComponent(jCheckBox6)
                     .addComponent(jCheckBox11))
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox2)
                     .addComponent(jCheckBox7)
                     .addComponent(jCheckBox10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(12, 12, 12)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox3)
                     .addComponent(jCheckBox8)
                     .addComponent(jCheckBox5))
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox4)
                     .addComponent(jCheckBox9)
-                    .addComponent(jCheckBox12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                    .addComponent(jCheckBox12)
+                    .addComponent(jCheckBox4))
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBox13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHuy)
                     .addComponent(btnSua))
@@ -240,62 +227,16 @@ public class SuaQuyenForm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, 436, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtMaQuyenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaQuyenActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtMaQuyenActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    private void jCheckBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox11ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox11ActionPerformed
-
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(SuaQuyenForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(SuaQuyenForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(SuaQuyenForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(SuaQuyenForm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                // Tạo JPanelQuyen giả lập cho việc testing
-                JPanelQuyen panel = new JPanelQuyen();
-                new SuaQuyenForm(panel, "Q1", "Admin", "qlTaiKhoan qlQuyen").setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnHuy;
@@ -304,6 +245,7 @@ public class SuaQuyenForm extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox10;
     private javax.swing.JCheckBox jCheckBox11;
     private javax.swing.JCheckBox jCheckBox12;
+    private javax.swing.JCheckBox jCheckBox13;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
@@ -323,6 +265,8 @@ public class SuaQuyenForm extends javax.swing.JFrame {
 
     // Thiết lập trạng thái các checkbox dựa trên chuỗi chi tiết quyền
     private void setCheckboxes(String chiTietQuyen) {
+        
+        
         jCheckBox1.setSelected(chiTietQuyen.contains("qlBanHang"));
         jCheckBox2.setSelected(chiTietQuyen.contains("qlNhapHang"));
         jCheckBox3.setSelected(chiTietQuyen.contains("qlSanPham"));
@@ -335,6 +279,7 @@ public class SuaQuyenForm extends javax.swing.JFrame {
         jCheckBox10.setSelected(chiTietQuyen.contains("qlNhaCungCap"));
         jCheckBox11.setSelected(chiTietQuyen.contains("qlPhieuNhap"));
         jCheckBox12.setSelected(chiTietQuyen.contains("qlThongKe"));
+        jCheckBox13.setSelected(chiTietQuyen.contains("qlQuyen"));
     }
     
     // Phương thức để tạo chuỗi chi tiết quyền từ các checkbox
@@ -376,6 +321,10 @@ public class SuaQuyenForm extends javax.swing.JFrame {
         }
         if (jCheckBox12.isSelected()) {
             chiTiet.append("qlThongKe ");
+        }
+        
+        if (jCheckBox13.isSelected()) {
+            chiTiet.append("qlQuyen ");
         }
         
         return chiTiet.toString().trim();

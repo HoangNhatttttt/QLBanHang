@@ -8,8 +8,8 @@ package GUI.MainPanel;
 
 import BUS.SanPhammBUS;
 import DTO.SanPhammDTO;
-import GUI.FromSuaSP;
-import GUI.FromThemSP;
+import GUI.FormSuaSP;
+import GUI.FormThemSP;
 import java.awt.Component;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -404,7 +404,7 @@ public class SanPhamGUI extends javax.swing.JPanel {
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
         // TODO add your handling code here:
-        FromThemSP frm = new FromThemSP();
+        FormThemSP frm = new FormThemSP();
         frm.setLocationRelativeTo(null); // căn giữa
         frm.setVisible(true);
     }//GEN-LAST:event_btnThemActionPerformed
@@ -429,7 +429,7 @@ public class SanPhamGUI extends javax.swing.JPanel {
             String hinhAnh = tblDS_SP.getValueAt(selectedRow, 6).toString();
 
             // Mở form sửa và truyền dữ liệu vào
-            FromSuaSP formSua = new FromSuaSP();
+            FormSuaSP formSua = new FormSuaSP();
             formSua.setFields(maSP, tenSP, donGia, donVi, maLoai, hinhAnh);
             formSua.setVisible(true);
 

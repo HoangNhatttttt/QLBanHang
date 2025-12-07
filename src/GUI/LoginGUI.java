@@ -7,6 +7,7 @@ import BUS.*;
 import DTO.*;
 import GUI.*;
 import GUI.Image.ImagePanel;
+import GUI.MainPanel.Quyen;
 import java.awt.BorderLayout;
   // Import FlatLaf
 

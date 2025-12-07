@@ -5,13 +5,10 @@
 package GUI;
 
 import GUI.MainPanel.QuanLyPhieuNhapForm;
-import GUI.MainPanel.JPanelQuyen;
-import GUI.MainPanel.JPanelTaiKhoan;
+import GUI.MainPanel.Quyen;
+import GUI.MainPanel.TaiKhoan;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import DTO.QuyenDTO;
 import static GUI.LoginGUI.nhanVienLogin;
 import static GUI.LoginGUI.quyenLogin;
 import java.awt.BorderLayout;
@@ -89,7 +86,7 @@ private JButton btnLogout; //e
     String chiTietQuyen = quyenLogin.getChiTietQuyen();
 // TODO: THÊM CHỨC NĂNG TRANG Ở NGAY ĐÂY, new [tênfile]
     themChucNang("Kho hàng", "qlKhoHang", new KhoHangPanel());
-    themChucNang("Bán hàng", "qlBanHang", new JPanelBanHang());
+    themChucNang("Bán hàng", "qlBanHang", new FormBanHang());
       themChucNang("Nhập hàng", "qlNhapHang", new NhapHangForm());
     themChucNang("Sản phẩm", "qlSanPham", new SanPhamGUI());
     themChucNang("Loại sản phẩm", "qlLoaiSanPham", new LoaiSanPhamGUI());
@@ -99,8 +96,8 @@ private JButton btnLogout; //e
       themChucNang("Nhân viên", "qlNhanVien", new NhanVienPanel());
       themChucNang("Khách hàng", "qlKhachHang", new KhachHangPanel());
       themChucNang("Nhà cung cấp", "qlNhaCungCap", new QuanLyNhaCungCapForm());
-      themChucNang("Tài khoản", "qlTaiKhoan", new JPanelTaiKhoan());
-      themChucNang("Quyền", "qlQuyen", new JPanelQuyen());
+      themChucNang("Tài khoản", "qlTaiKhoan", new TaiKhoan());
+      themChucNang("Quyền", "qlQuyen", new Quyen());
     themChucNang("Thống kê", "qlThongKe", new ThongKePanel());
 
     panelMenu.add(Box.createVerticalGlue());   // push it to the bottom

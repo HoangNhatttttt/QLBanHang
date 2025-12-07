@@ -15,12 +15,12 @@ import GUI.MainPanel.*;
  */
 public class ThemTaiKhoan extends javax.swing.JFrame {
 
-    private JPanelTaiKhoan parentPanel;
+    private TaiKhoan parentPanel;
 
     /**
      * Creates new form SuaTaiKhoanForm
      */
-    public ThemTaiKhoan(JPanelTaiKhoan parent) {
+    public ThemTaiKhoan(TaiKhoan parent) {
         initComponents();
         this.parentPanel = parent;
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
@@ -244,7 +244,7 @@ public class ThemTaiKhoan extends javax.swing.JFrame {
         
         btnChonMaQuyen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FromChonQuyen formChonQuyen = new FromChonQuyen(ThemTaiKhoan.this);
+                FormChonQuyen formChonQuyen = new FormChonQuyen(ThemTaiKhoan.this);
                 formChonQuyen.setLocationRelativeTo(null);
                 formChonQuyen.setVisible(true);
             }
@@ -256,7 +256,7 @@ public class ThemTaiKhoan extends javax.swing.JFrame {
         txtMaNV.setText(maNV);
     }
 
-    // Phương thức để nhận mã quyền từ FromChonQuyen
+    // Phương thức để nhận mã quyền từ FormChonQuyen
     public void setMaQuyen(String maQuyen) {
         txtMaQuyen.setText(maQuyen);
     }
@@ -294,8 +294,8 @@ public class ThemTaiKhoan extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                // Tạo một JPanelTaiKhoan tạm thời cho mục đích thử nghiệm
-                new ThemTaiKhoan(new JPanelTaiKhoan()).setVisible(true);
+                // Tạo một TaiKhoan tạm thời cho mục đích thử nghiệm
+                new ThemTaiKhoan(new TaiKhoan()).setVisible(true);
             }
         });
     }

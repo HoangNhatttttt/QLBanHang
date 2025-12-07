@@ -148,7 +148,6 @@ public class ThongKePanel extends javax.swing.JPanel {
         boxTrongNam = new javax.swing.JPanel();
         trongNam = new javax.swing.JTextField();
 
-        setBackground(new java.awt.Color(255, 255, 255));
         setPreferredSize(new java.awt.Dimension(1330, 750));
 
         boxA.setForeground(new java.awt.Color(0, 0, 0));
@@ -159,7 +158,6 @@ public class ThongKePanel extends javax.swing.JPanel {
             }
         });
 
-        title.setBackground(new java.awt.Color(255, 255, 255));
         title.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         title.setForeground(new java.awt.Color(0, 0, 0));
         title.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -191,7 +189,7 @@ public class ThongKePanel extends javax.swing.JPanel {
             }
         });
 
-        boxQuy.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quý năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxQuy.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quý năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         javax.swing.GroupLayout boxQuyLayout = new javax.swing.GroupLayout(boxQuy);
         boxQuy.setLayout(boxQuyLayout);
@@ -208,7 +206,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(quy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxTuNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Từ năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxTuNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Từ năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         javax.swing.GroupLayout boxTuNamLayout = new javax.swing.GroupLayout(boxTuNam);
         boxTuNam.setLayout(boxTuNamLayout);
@@ -225,7 +223,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(tuNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxDenNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đến năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxDenNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đến năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         javax.swing.GroupLayout boxDenNamLayout = new javax.swing.GroupLayout(boxDenNam);
         boxDenNam.setLayout(boxDenNamLayout);
@@ -242,7 +240,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(denNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxTuThang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Từ tháng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxTuThang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Từ tháng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         javax.swing.GroupLayout boxTuThangLayout = new javax.swing.GroupLayout(boxTuThang);
         boxTuThang.setLayout(boxTuThangLayout);
@@ -259,7 +257,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(tuThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxDenThang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đến tháng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxDenThang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đến tháng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         javax.swing.GroupLayout boxDenThangLayout = new javax.swing.GroupLayout(boxDenThang);
         boxDenThang.setLayout(boxDenThangLayout);
@@ -276,7 +274,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(denThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxTrongNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Trong năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxTrongNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Trong năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
 
         javax.swing.GroupLayout boxTrongNamLayout = new javax.swing.GroupLayout(boxTrongNam);
         boxTrongNam.setLayout(boxTrongNamLayout);
@@ -317,7 +315,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                         .addComponent(boxTuThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(boxDenThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 116, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
                         .addComponent(createTable)
                         .addGap(42, 42, 42))))
             .addGroup(layout.createSequentialGroup()
@@ -337,7 +335,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(boxQuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -351,7 +349,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                     .addComponent(boxDenThang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(boxTrongNam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(583, 583, 583))
+                .addGap(350, 350, 350))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -618,9 +616,6 @@ public class ThongKePanel extends javax.swing.JPanel {
     private javax.swing.JPanel boxDenNam;
     private javax.swing.JPanel boxDenThang;
     private javax.swing.JPanel boxQuy;
-    private javax.swing.JPanel boxQuy5;
-    private javax.swing.JPanel boxQuy6;
-    private javax.swing.JPanel boxQuy7;
     private javax.swing.JPanel boxTrongNam;
     private javax.swing.JPanel boxTuNam;
     private javax.swing.JPanel boxTuThang;
@@ -629,9 +624,6 @@ public class ThongKePanel extends javax.swing.JPanel {
     private javax.swing.JTextField denThang;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField quy;
-    private javax.swing.JTextField quy5;
-    private javax.swing.JTextField quy6;
-    private javax.swing.JTextField quy7;
     private javax.swing.JLabel title;
     private javax.swing.JTextField trongNam;
     private javax.swing.JTextField tuNam;

@@ -595,7 +595,10 @@ public class HoaDonPanel extends javax.swing.JPanel {
                 LocalDateTime ngayLapDT = LocalDateTime.parse(ngayLap, formatter);
                 
                 HoaDonDTO newHD = new HoaDonDTO(maHD, maKH, maNV, ngayLapDT, tongTien);
-                boolean success = hdBus.addHoaDon(newHD);
+                boolean success = false;
+                if(hdBus.addHoaDon(newHD) != null)
+                    success = true;
+                
                 if (success) {
                     JOptionPane.showMessageDialog(this, "Đã thêm Hóa Đơn thành công.");
                     updateTable();

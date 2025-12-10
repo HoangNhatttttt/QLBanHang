@@ -65,13 +65,13 @@ public class HoaDonBUS {
     }
 
     // Add new HoaDon
-    public boolean addHoaDon(HoaDonDTO newHD) {
+    public String addHoaDon(HoaDonDTO newHD) {
         // ID should not be duplicate unless it's manually set
         if (!newHD.getMaHD().equals("0")) {
             for (HoaDonDTO hd : listHoaDon) {
                 if (hd.getMaHD().equals(newHD.getMaHD())) {
                     System.out.println("Hóa đơn với mã " + newHD.getMaHD() + " đã tồn tại.");
-                    return false;
+                    return null;
                 }
             }
         }
@@ -80,9 +80,9 @@ public class HoaDonBUS {
         if (actualMaHD != null) {
             newHD.setMaHD(actualMaHD);
             listHoaDon.add(newHD);
-            return true;
+            return actualMaHD;
         }
-        return false;
+        return null;
     }
 
     // Update

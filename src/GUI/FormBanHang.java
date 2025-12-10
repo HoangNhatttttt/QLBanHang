@@ -5,8 +5,12 @@
 package GUI;
 
 import BUS.BanHangBUS;
+import BUS.ChiTietHoaDonBUS;
+import BUS.HoaDonBUS;
+import DTO.ChiTietHoaDonDTO;
 import DTO.SanPhamDTO;
 import DTO.ChiTietSanPhamDTO;
+import DTO.HoaDonDTO;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.table.DefaultTableModel;
@@ -15,9 +19,11 @@ import java.io.File;
 import javax.swing.JOptionPane;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.math.BigDecimal;
 import java.sql.Connection;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -325,7 +331,7 @@ public class FormBanHang extends javax.swing.JPanel {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnSanPhamLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 128, Short.MAX_VALUE)
+                .addGap(41, 41, 41)
                 .addGroup(pnSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(pnSanPhamLayout.createSequentialGroup()
                         .addGroup(pnSanPhamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -445,12 +451,6 @@ public class FormBanHang extends javax.swing.JPanel {
 
         jPanel15.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEtchedBorder(), "Thành tiền"));
 
-        txtThanhTien.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtThanhTienActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
@@ -568,7 +568,7 @@ public class FormBanHang extends javax.swing.JPanel {
                         .addComponent(btnXoa, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(btnThanhToan, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -759,12 +759,70 @@ public class FormBanHang extends javax.swing.JPanel {
     }//GEN-LAST:event_btnChonNVActionPerformed
                                       
     private void btnThanhToanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThanhToanActionPerformed
-        //tblGioHang
-    }//GEN-LAST:event_btnThanhToanActionPerformed
+        
+        if(tblGioHang.getRowCount() == 0){
+            String text = "Vui lòng chọn sản phẩm trước khi thanh toán.";
+            JOptionPane.showMessageDialog(this, text, "Lỗi", JOptionPane.INFORMATION_MESSAGE);
+            return;
+        }
+        
+        // Thêm hoá đơn
+        String maKH = "1";
+        String maNV = "1";
+        
+        BigDecimal tongTien = new BigDecimal(txtThanhTien.getText().replace(",", ""));
+        
+        LocalDateTime NgayLapHD = LocalDateTime.now();
+        
+        HoaDonDTO hoaDon = new HoaDonDTO("0", maKH, maNV, NgayLapHD, tongTien);
+        
+        String maHD = new HoaDonBUS().addHoaDon(hoaDon);
+    
+        if(maHD != null){
+            // Thêm chi tiết hoá đơn
+            boolean result = false;
+            
+            int rowCount = tblGioHang.getRowCount(); // Trích xuất số dòng trong bảng
+            // Loop through each row
+            for (int i = 0; i < rowCount; i++) {
 
-    private void txtThanhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtThanhTienActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtThanhTienActionPerformed
+
+                // Extract data from each column
+                String maSP = tblGioHang.getValueAt(i, 1).toString();
+                int soLuong = Integer.parseInt(tblGioHang.getValueAt(i, 3).toString());
+                double donGia = Double.parseDouble(tblGioHang.getValueAt(i, 4).toString().replace(",", ""));
+                double thanhTien = Double.parseDouble(tblGioHang.getValueAt(i, 5).toString().replace(",", ""));
+
+                ChiTietHoaDonDTO chiTietHoaDon = new ChiTietHoaDonDTO(maHD, maSP, soLuong, donGia, thanhTien);
+
+                result = new ChiTietHoaDonBUS().addChiTietHoaDon(chiTietHoaDon);
+
+                System.out.println("Kết quả: " + result);
+            }
+
+            if(result){
+                String text = "Thanh toán thành công..";
+                JOptionPane.showMessageDialog(this, text, "Kết quả", JOptionPane.INFORMATION_MESSAGE);
+
+                DefaultTableModel model = (DefaultTableModel) tblGioHang.getModel();
+                model.setRowCount(0);
+                return;
+            }
+
+            if(!result){
+                String text = "Thanh toán thất bại..";
+                JOptionPane.showMessageDialog(this, text, "Kết quả", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+        }
+        
+        if(maHD == null){
+            String text = "Thanh toán thất bại.";
+            JOptionPane.showMessageDialog(this, text, "Kết quả", JOptionPane.WARNING_MESSAGE);
+            return;
+        }
+        
+    }//GEN-LAST:event_btnThanhToanActionPerformed
 
     private void btnChonKHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnChonKHActionPerformed
         // TODO add your handling code here:

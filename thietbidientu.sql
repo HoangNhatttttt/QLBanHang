@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th5 20, 2025 lúc 02:46 PM
--- Phiên bản máy phục vụ: 10.4.32-MariaDB
--- Phiên bản PHP: 8.0.30
+-- Host: 127.0.0.1
+-- Generation Time: Dec 10, 2025 at 05:58 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `thietbidientu`
+-- Database: `thietbidientu`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chitiethoadon`
+-- Table structure for table `chitiethoadon`
 --
 
 CREATE TABLE `chitiethoadon` (
@@ -35,18 +35,10 @@ CREATE TABLE `chitiethoadon` (
   `ThanhTien` decimal(15,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Đang đổ dữ liệu cho bảng `chitiethoadon`
---
-
-INSERT INTO `chitiethoadon` (`MaHD`, `MaSP`, `SoLuong`, `DonGia`, `ThanhTien`) VALUES
-('1', '1', 2, 25000000.00, 50000000.00),
-('1', '2', 1, 40000000.00, 40000000.00);
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chitietkhuyenmai`
+-- Table structure for table `chitietkhuyenmai`
 --
 
 CREATE TABLE `chitietkhuyenmai` (
@@ -56,36 +48,25 @@ CREATE TABLE `chitietkhuyenmai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `chitietkhuyenmai`
+-- Dumping data for table `chitietkhuyenmai`
 --
 
 INSERT INTO `chitietkhuyenmai` (`MaCTKM`, `MaSP`, `PhanTramGiamGia`) VALUES
 ('KM1', '1', 10.00),
-('KM1', '2', 15.00),
+('KM1', '16', 7.00),
 ('KM1', '3', 10.00),
-('KM1', '4', 20.00),
-('KM1', '5', 15.00),
-('KM2', '10', 50.00),
-('KM2', '6', 50.00),
-('KM2', '7', 50.00),
-('KM2', '8', 50.00),
-('KM2', '9', 50.00),
-('KM3', '11', 30.00),
-('KM3', '12', 30.00),
-('KM3', '13', 30.00),
-('KM4', '14', 25.00),
-('KM4', '15', 25.00),
-('KM4', '16', 25.00),
-('KM4', '17', 25.00),
-('KM5', '18', 40.00),
-('KM5', '19', 40.00),
-('KM5', '20', 40.00),
-('KM5', '21', 40.00);
+('KM2', '13', 15.00),
+('KM2', '14', 12.00),
+('KM2', '17', 7.00),
+('KM2', '4', 7.00),
+('KM3', '10', 12.00),
+('KM4', '2', 20.00),
+('KM4', '6', 20.00);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chitietphieunhap`
+-- Table structure for table `chitietphieunhap`
 --
 
 CREATE TABLE `chitietphieunhap` (
@@ -97,27 +78,24 @@ CREATE TABLE `chitietphieunhap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `chitietphieunhap`
+-- Dumping data for table `chitietphieunhap`
 --
 
 INSERT INTO `chitietphieunhap` (`MaPN`, `MaSP`, `SoLuong`, `DonGia`, `ThanhTien`) VALUES
-('PN1', '1', 2, 3000.00, 6000.00),
-('PN10', '2', 3, 11000000.00, 33000000.00),
-('PN2', '1', 1, 25000000.00, 25000000.00),
-('PN2', '2', 1, 40000000.00, 40000000.00),
-('PN3', '1', 3, 25000000.00, 75000000.00),
-('PN3', '2', 1, 40000000.00, 40000000.00),
-('PN4', '1', 1, 25000000.00, 25000000.00),
-('PN5', '2', 1, 40000000.00, 40000000.00),
-('PN6', '1', 1, 25000000.00, 25000000.00),
-('PN7', '2', 1, 40000000.00, 40000000.00),
-('PN8', '1', 1, 25000000.00, 25000000.00),
-('PN9', '1', 1, 25000000.00, 25000000.00);
+('PN1', '1', 15, 27000000.00, 405000000.00),
+('PN2', '13', 15, 19000000.00, 285000000.00),
+('PN2', '14', 10, 20000000.00, 200000000.00),
+('PN2', '4', 12, 21000000.00, 252000000.00),
+('PN3', '15', 7, 12000000.00, 84000000.00),
+('PN3', '5', 12, 7000000.00, 84000000.00),
+('PN4', '15', 12, 12000000.00, 144000000.00),
+('PN4', '18', 5, 32000000.00, 160000000.00),
+('PN4', '5', 20, 7000000.00, 140000000.00);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chtrinhkhuyenmai`
+-- Table structure for table `chtrinhkhuyenmai`
 --
 
 CREATE TABLE `chtrinhkhuyenmai` (
@@ -128,20 +106,19 @@ CREATE TABLE `chtrinhkhuyenmai` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `chtrinhkhuyenmai`
+-- Dumping data for table `chtrinhkhuyenmai`
 --
 
 INSERT INTO `chtrinhkhuyenmai` (`MaCTKM`, `TenKhuyenMai`, `NgayBatDau`, `NgayKetThuc`) VALUES
-('KM1', 'Giảm giá hè sôi động', '2025-06-01', '2025-06-15'),
-('KM2', 'Mua 1 tặng 1', '2025-07-01', '2025-07-07'),
-('KM3', 'Flash sale 50%', '2025-08-10', '2025-08-10'),
-('KM4', 'Ưu đãi VIP', '2025-09-01', '2025-09-30'),
-('KM5', 'Black Friday', '2025-11-25', '2025-11-27');
+('KM1', 'SALE IPHONE GIÁNG SINH', '2025-12-01', '2025-12-31'),
+('KM2', 'SALE SAMSUNG', '2025-12-09', '2025-12-24'),
+('KM3', 'ONESALE ONEPLUS', '2025-12-11', '2025-12-17'),
+('KM4', 'FURY OF THE SMALL PHONES', '2025-12-10', '2025-12-20');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `hoadon`
+-- Table structure for table `hoadon`
 --
 
 CREATE TABLE `hoadon` (
@@ -152,17 +129,10 @@ CREATE TABLE `hoadon` (
   `TongTien` decimal(15,2) DEFAULT 0.00
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Đang đổ dữ liệu cho bảng `hoadon`
---
-
-INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `NgayLapHD`, `TongTien`) VALUES
-('1', '1', '1', '2025-04-03 00:00:00', 65000000.00);
-
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `khachhang`
+-- Table structure for table `khachhang`
 --
 
 CREATE TABLE `khachhang` (
@@ -174,7 +144,7 @@ CREATE TABLE `khachhang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `khachhang`
+-- Dumping data for table `khachhang`
 --
 
 INSERT INTO `khachhang` (`MaKH`, `Ho`, `Ten`, `DiaChi`, `SDT`) VALUES
@@ -183,7 +153,7 @@ INSERT INTO `khachhang` (`MaKH`, `Ho`, `Ten`, `DiaChi`, `SDT`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `loaisp`
+-- Table structure for table `loaisp`
 --
 
 CREATE TABLE `loaisp` (
@@ -193,21 +163,21 @@ CREATE TABLE `loaisp` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `loaisp`
+-- Dumping data for table `loaisp`
 --
 
 INSERT INTO `loaisp` (`MaLoai`, `TenLoai`, `MoTa`) VALUES
-('1', 'Điện thoại', 'Thiết bị di động'),
-('2', 'Laptop', 'Máy tính xách tay'),
-('3', 'Tivi', 'Thiết bị hiển thị hình ảnh và âm thanh, dùng trong giải trí gia đình'),
-('4', 'Tủ lạnh', 'Thiết bị bảo quản thực phẩm ở nhiệt độ thấp'),
-('5', 'Máy giặt', 'Thiết bị gia dụng giúp giặt sạch quần áo tự động'),
-('6', 'Loa Bluetooth', 'Thiết bị phát âm thanh không dây, kết nối qua Bluetooth');
+('1', 'Apple', 'Apple stuff'),
+('2', 'Asus', 'Zen phone stuff'),
+('3', 'OnePlus', 'OnePlus stuff'),
+('4', 'Samsung', 'Samsung stuff'),
+('5', 'XiaoMi', 'XiaoMi Stuff'),
+('6', 'Google', 'Pixel Stuff');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nhacungcap`
+-- Table structure for table `nhacungcap`
 --
 
 CREATE TABLE `nhacungcap` (
@@ -218,7 +188,7 @@ CREATE TABLE `nhacungcap` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `nhacungcap`
+-- Dumping data for table `nhacungcap`
 --
 
 INSERT INTO `nhacungcap` (`MaNCC`, `TenNCC`, `DiaChi`, `SDT`) VALUES
@@ -229,7 +199,7 @@ INSERT INTO `nhacungcap` (`MaNCC`, `TenNCC`, `DiaChi`, `SDT`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `nhanvien`
+-- Table structure for table `nhanvien`
 --
 
 CREATE TABLE `nhanvien` (
@@ -241,7 +211,7 @@ CREATE TABLE `nhanvien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `nhanvien`
+-- Dumping data for table `nhanvien`
 --
 
 INSERT INTO `nhanvien` (`MaNV`, `Ho`, `Ten`, `LuongThang`, `TrangThai`) VALUES
@@ -253,7 +223,7 @@ INSERT INTO `nhanvien` (`MaNV`, `Ho`, `Ten`, `LuongThang`, `TrangThai`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phanquyen`
+-- Table structure for table `phanquyen`
 --
 
 CREATE TABLE `phanquyen` (
@@ -263,7 +233,7 @@ CREATE TABLE `phanquyen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `phanquyen`
+-- Dumping data for table `phanquyen`
 --
 
 INSERT INTO `phanquyen` (`MaQuyen`, `TenQuyen`, `ChiTietQuyen`) VALUES
@@ -275,7 +245,7 @@ INSERT INTO `phanquyen` (`MaQuyen`, `TenQuyen`, `ChiTietQuyen`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `phieunhaphang`
+-- Table structure for table `phieunhaphang`
 --
 
 CREATE TABLE `phieunhaphang` (
@@ -288,25 +258,19 @@ CREATE TABLE `phieunhaphang` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `phieunhaphang`
+-- Dumping data for table `phieunhaphang`
 --
 
 INSERT INTO `phieunhaphang` (`MaPN`, `MaNV`, `MaNCC`, `NgayNhap`, `GioNhap`, `TongTien`) VALUES
-('PN1', '4', '1', '0000-00-00', '00:00:00', 10000.00),
-('PN10', '4', '2', '2025-05-15', '15:41:40', 33000000.00),
-('PN2', '4', '2', '2025-05-10', '08:40:26', 65000000.00),
-('PN3', '4', '3', '2025-05-10', '08:49:45', 115000000.00),
-('PN4', '4', '1', '2025-05-10', '09:07:08', 25000000.00),
-('PN5', '4', '3', '2025-05-10', '09:09:53', 40000000.00),
-('PN6', '4', '2', '2025-05-10', '09:21:43', 25000000.00),
-('PN7', '4', '2', '2025-05-10', '09:25:57', 40000000.00),
-('PN8', '4', '1', '2025-05-10', '09:31:47', 25000000.00),
-('PN9', '4', '2', '2025-05-10', '09:34:09', 25000000.00);
+('PN1', '4', '1', '2025-12-10', '11:35:21', 405000000.00),
+('PN2', '4', '3', '2025-12-10', '11:35:56', 737000000.00),
+('PN3', '4', '2', '2025-12-10', '11:36:33', 168000000.00),
+('PN4', '4', '2', '2025-12-10', '11:57:49', 444000000.00);
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sanpham`
+-- Table structure for table `sanpham`
 --
 
 CREATE TABLE `sanpham` (
@@ -320,36 +284,30 @@ CREATE TABLE `sanpham` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `sanpham`
+-- Dumping data for table `sanpham`
 --
 
 INSERT INTO `sanpham` (`MaSP`, `TenSP`, `SoLuong`, `DonGia`, `DonVi`, `MaLoai`, `HinhAnh`) VALUES
-('1', 'iPhone 15', 19, 18990000.00, 'Chiếc', '1', 'src\\GUI\\Image\\iphone15.jpg'),
-('10', 'Samsung QLED 50 inch', 18, 19000000.00, 'Chiếc', '3', 'src\\GUI\\Image\\samsung-qled-50inch.jpg'),
-('11', 'LG Smart TV 43 inch', 25, 12000000.00, 'Chiếc', '3', 'src\\GUI\\Image\\lg-smart-43inch.jpg'),
-('12', 'Panasonic Inverter 350L', 10, 15000000.00, 'Chiếc', '4', 'src\\GUI\\Image\\panasonic-350l.jpg'),
-('13', 'Sharp 2 cánh 250L', 14, 9500000.00, 'Chiếc', '4', 'src\\GUI\\Image\\sharp-250l.jpg'),
-('14', 'LG DoorCooling+ 420L', 8, 17000000.00, 'Chiếc', '4', 'src\\GUI\\Image\\lg-420l.jpg'),
-('15', 'Electrolux 9kg Inverter', 11, 11000000.00, 'Chiếc', '5', 'src\\GUI\\Image\\electrolux-9kg.jpg'),
-('16', 'LG 8.5kg cửa trước', 13, 10500000.00, 'Chiếc', '5', 'src\\GUI\\Image\\lg-8.5kg.jpg'),
-('17', 'Samsung EcoBubble 10kg', 9, 13500000.00, 'Chiếc', '5', 'src\\GUI\\Image\\samsung-10kg.jpg'),
-('18', 'JBL Flip 6', 30, 2800000.00, 'Chiếc', '6', 'src\\GUI\\Image\\jbl-flip6.jpg'),
-('19', 'Sony SRS-XB43', 18, 3900000.00, 'Chiếc', '6', 'src\\GUI\\Image\\sony-xb43.jpg'),
-('2', 'MacBook Pro', 14, 11000000.00, 'Chiếc', '2', 'src\\GUI\\Image\\macbook-pro.jpg'),
-('20', 'Anker Soundcore 3', 25, 1800000.00, 'Chiếc', '6', 'src\\GUI\\Image\\anker-3.jpg'),
-('21', 'Marshall Emberton', 12, 4200000.00, 'Chiếc', '6', 'src\\GUI\\Image\\marshall.jpg'),
-('3', 'iPhone 14 Pro', 20, 25000000.00, 'Chiếc', '1', 'src\\GUI\\Image\\iphone14-pro.jpg'),
-('4', 'Samsung Galaxy S23', 30, 21000000.00, 'Chiếc', '1', 'src\\GUI\\Image\\galaxy-s23.jpg'),
-('5', 'Xiaomi Redmi Note 12', 50, 7000000.00, 'Chiếc', '1', 'src\\GUI\\Image\\redmi-note12.jpg'),
-('6', 'MacBook Air M2', 15, 28000000.00, 'Chiếc', '2', 'src\\GUI\\Image\\macbook-air-m2.jpg'),
-('7', 'Dell XPS 13', 10, 26000000.00, 'Chiếc', '2', 'src\\GUI\\Image\\dell-xps-13.jpg'),
-('8', 'HP Pavilion 15', 20, 18000000.00, 'Chiếc', '2', 'src\\GUI\\Image\\hp-pavilion15.jpg'),
-('9', 'Sony Bravia 55 inch', 12, 22000000.00, 'Chiếc', '3', 'src\\GUI\\Image\\sony-bravia-55inch.jpg');
+('1', 'iPhone 15', 15, 27000000.00, 'Chiếc', '1', 'src\\GUI\\Image\\items\\iphone15.jpg'),
+('10', 'OnePlus 13', 0, 19000000.00, 'Chiếc', '3', 'src\\GUI\\Image\\items\\oneplus-13.png'),
+('13', 'Samsung Galaxy S20 Ultra Black', 15, 19000000.00, 'Chiếc', '4', 'src\\GUI\\Image\\items\\Gallery-01-C2-Lockup-MysticBlack-1600x1200-3341909277.jpg'),
+('14', 'Samsung Galaxy S20 Ultra White', 10, 20000000.00, 'Chiếc', '4', 'src\\GUI\\Image\\items\\csm_4_3_Teaser_Samsung_Galaxy_Note20_Ultra_5G_SM-N986B_MysticWhite_f4a260a140-3642743396.jpg'),
+('15', 'Xiaomi Redmi note 14', 12, 12000000.00, 'chiếc', '5', 'src\\GUI\\Image\\items\\Redmi-Note-14-4G-Azul-oceano-1803113835.png'),
+('16', 'iPhone 15 Pro Max', 0, 32000000.00, 'Chiếc', '1', 'src\\GUI\\Image\\items\\iphone-15-pro-max.png'),
+('17', 'Samsung Z Flip 4', 0, 45000000.00, 'Chiếc', '4', 'src\\GUI\\Image\\items\\samsung-galaxy-z-flip4-graphite.png'),
+('18', 'Xiaomi Mix Fold 3', 5, 32000000.00, 'Chiếc', '5', 'src\\GUI\\Image\\items\\xiaomi-mix-fold-3.jpg'),
+('19', 'Google Pixel 8a', 0, 25000000.00, 'Chiếc', '6', 'src\\GUI\\Image\\items\\pixel-8a.jpg'),
+('2', 'Zenfone 9', 0, 22000000.00, 'Chiếc', '2', 'src\\GUI\\Image\\items\\ZF9-blue.jpg'),
+('20', 'Google Pixel 9', 0, 36000000.00, 'Chiếc', '6', 'src\\GUI\\Image\\items\\pixel-9.jpg'),
+('3', 'iPhone 14 Pro', 20, 25000000.00, 'Chiếc', '1', 'src\\GUI\\Image\\items\\iphone14-pro.jpg'),
+('4', 'Samsung Galaxy S23', 12, 21000000.00, 'Chiếc', '4', 'src\\GUI\\Image\\items\\galaxy-s23.jpg'),
+('5', 'Xiaomi Redmi Note 12', 32, 7000000.00, 'Chiếc', '5', 'src\\GUI\\Image\\items\\redmi-note12.jpg'),
+('6', 'Zenfone 8', 0, 11000000.00, 'Chiếc', '2', 'src\\GUI\\Image\\items\\zenfone-8.jpg');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `taikhoan`
+-- Table structure for table `taikhoan`
 --
 
 CREATE TABLE `taikhoan` (
@@ -360,7 +318,7 @@ CREATE TABLE `taikhoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `taikhoan`
+-- Dumping data for table `taikhoan`
 --
 
 INSERT INTO `taikhoan` (`TenTK`, `MatKhau`, `MaNV`, `MaQuyen`) VALUES
@@ -370,38 +328,38 @@ INSERT INTO `taikhoan` (`TenTK`, `MatKhau`, `MaNV`, `MaQuyen`) VALUES
 ('sanpham', 'sanpham', '3', 'Q3');
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `chitiethoadon`
+-- Indexes for table `chitiethoadon`
 --
 ALTER TABLE `chitiethoadon`
   ADD PRIMARY KEY (`MaHD`,`MaSP`),
   ADD KEY `MaSP` (`MaSP`);
 
 --
--- Chỉ mục cho bảng `chitietkhuyenmai`
+-- Indexes for table `chitietkhuyenmai`
 --
 ALTER TABLE `chitietkhuyenmai`
   ADD PRIMARY KEY (`MaCTKM`,`MaSP`),
   ADD KEY `MaSP` (`MaSP`);
 
 --
--- Chỉ mục cho bảng `chitietphieunhap`
+-- Indexes for table `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
   ADD PRIMARY KEY (`MaPN`,`MaSP`),
   ADD KEY `MaSP` (`MaSP`);
 
 --
--- Chỉ mục cho bảng `chtrinhkhuyenmai`
+-- Indexes for table `chtrinhkhuyenmai`
 --
 ALTER TABLE `chtrinhkhuyenmai`
   ADD PRIMARY KEY (`MaCTKM`);
 
 --
--- Chỉ mục cho bảng `hoadon`
+-- Indexes for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD PRIMARY KEY (`MaHD`),
@@ -409,37 +367,37 @@ ALTER TABLE `hoadon`
   ADD KEY `MaNV` (`MaNV`);
 
 --
--- Chỉ mục cho bảng `khachhang`
+-- Indexes for table `khachhang`
 --
 ALTER TABLE `khachhang`
   ADD PRIMARY KEY (`MaKH`);
 
 --
--- Chỉ mục cho bảng `loaisp`
+-- Indexes for table `loaisp`
 --
 ALTER TABLE `loaisp`
   ADD PRIMARY KEY (`MaLoai`);
 
 --
--- Chỉ mục cho bảng `nhacungcap`
+-- Indexes for table `nhacungcap`
 --
 ALTER TABLE `nhacungcap`
   ADD PRIMARY KEY (`MaNCC`);
 
 --
--- Chỉ mục cho bảng `nhanvien`
+-- Indexes for table `nhanvien`
 --
 ALTER TABLE `nhanvien`
   ADD PRIMARY KEY (`MaNV`);
 
 --
--- Chỉ mục cho bảng `phanquyen`
+-- Indexes for table `phanquyen`
 --
 ALTER TABLE `phanquyen`
   ADD PRIMARY KEY (`MaQuyen`);
 
 --
--- Chỉ mục cho bảng `phieunhaphang`
+-- Indexes for table `phieunhaphang`
 --
 ALTER TABLE `phieunhaphang`
   ADD PRIMARY KEY (`MaPN`),
@@ -447,14 +405,14 @@ ALTER TABLE `phieunhaphang`
   ADD KEY `MaNCC` (`MaNCC`);
 
 --
--- Chỉ mục cho bảng `sanpham`
+-- Indexes for table `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`MaSP`),
   ADD KEY `MaLoai` (`MaLoai`);
 
 --
--- Chỉ mục cho bảng `taikhoan`
+-- Indexes for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`TenTK`),
@@ -462,52 +420,52 @@ ALTER TABLE `taikhoan`
   ADD KEY `MaQuyen` (`MaQuyen`);
 
 --
--- Các ràng buộc cho các bảng đã đổ
+-- Constraints for dumped tables
 --
 
 --
--- Các ràng buộc cho bảng `chitiethoadon`
+-- Constraints for table `chitiethoadon`
 --
 ALTER TABLE `chitiethoadon`
   ADD CONSTRAINT `chitiethoadon_ibfk_1` FOREIGN KEY (`MaHD`) REFERENCES `hoadon` (`MaHD`) ON DELETE CASCADE,
   ADD CONSTRAINT `chitiethoadon_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
 
 --
--- Các ràng buộc cho bảng `chitietkhuyenmai`
+-- Constraints for table `chitietkhuyenmai`
 --
 ALTER TABLE `chitietkhuyenmai`
   ADD CONSTRAINT `chitietkhuyenmai_ibfk_1` FOREIGN KEY (`MaCTKM`) REFERENCES `chtrinhkhuyenmai` (`MaCTKM`),
   ADD CONSTRAINT `chitietkhuyenmai_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
 
 --
--- Các ràng buộc cho bảng `chitietphieunhap`
+-- Constraints for table `chitietphieunhap`
 --
 ALTER TABLE `chitietphieunhap`
   ADD CONSTRAINT `chitietphieunhap_ibfk_1` FOREIGN KEY (`MaPN`) REFERENCES `phieunhaphang` (`MaPN`),
   ADD CONSTRAINT `chitietphieunhap_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
 
 --
--- Các ràng buộc cho bảng `hoadon`
+-- Constraints for table `hoadon`
 --
 ALTER TABLE `hoadon`
   ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`MaKH`) REFERENCES `khachhang` (`MaKH`),
   ADD CONSTRAINT `hoadon_ibfk_2` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`);
 
 --
--- Các ràng buộc cho bảng `phieunhaphang`
+-- Constraints for table `phieunhaphang`
 --
 ALTER TABLE `phieunhaphang`
   ADD CONSTRAINT `phieunhaphang_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`),
   ADD CONSTRAINT `phieunhaphang_ibfk_2` FOREIGN KEY (`MaNCC`) REFERENCES `nhacungcap` (`MaNCC`);
 
 --
--- Các ràng buộc cho bảng `sanpham`
+-- Constraints for table `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD CONSTRAINT `sanpham_ibfk_1` FOREIGN KEY (`MaLoai`) REFERENCES `loaisp` (`MaLoai`);
 
 --
--- Các ràng buộc cho bảng `taikhoan`
+-- Constraints for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`),

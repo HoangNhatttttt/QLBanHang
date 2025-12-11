@@ -3,10 +3,11 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 10, 2025 at 05:16 PM
+-- Generation Time: Dec 11, 2025 at 01:59 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
+SET FOREIGN_KEY_CHECKS=0;
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
@@ -43,7 +44,10 @@ CREATE TABLE `chitiethoadon` (
 
 INSERT INTO `chitiethoadon` (`MaHD`, `MaSP`, `SoLuong`, `DonGia`, `ThanhTien`) VALUES
 ('1', '13', 1, 19000000.00, 19000000.00),
-('1', '18', 1, 32000000.00, 32000000.00);
+('1', '18', 1, 32000000.00, 32000000.00),
+('2', '18', 1, 32000000.00, 32000000.00),
+('2', '4', 1, 21000000.00, 21000000.00),
+('3', '15', 1, 12000000.00, 12000000.00);
 
 -- --------------------------------------------------------
 
@@ -159,7 +163,9 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`MaHD`, `MaKH`, `MaNV`, `NgayLapHD`, `TongTien`) VALUES
-('1', '1', '1', '2025-12-10 23:13:51', 51000000.00);
+('1', '1', '1', '2025-12-10 23:13:51', 51000000.00),
+('2', '1', '1', '2025-12-10 23:38:48', 53000000.00),
+('3', '1', '1', '2025-12-11 07:33:27', 12000000.00);
 
 -- --------------------------------------------------------
 
@@ -269,10 +275,10 @@ CREATE TABLE `phanquyen` (
 --
 
 INSERT INTO `phanquyen` (`MaQuyen`, `TenQuyen`, `ChiTietQuyen`) VALUES
-('Q1', 'Quản lí', 'qlNhanVien qlKhachHang, qlHoaDon'),
+('Q1', 'Quản lí', 'qlHoaDon qlKhuyenMai qlNhanVien qlKhachHang qlNhaCungCap qlThongKe'),
 ('Q2', 'Admin', 'qlTaiKhoan qlThongKe qlQuyen'),
 ('Q3', 'Sản phẩm', 'qlSanPham, qlLoaiSanPham, qlKhuyenMai'),
-('Q4', 'nhập hàng', 'qlNhapHang, qlPhieuNhap, qlNhaCungCap'),
+('Q4', 'nhập hàng', 'qlNhapHang qlPhieuNhap qlKhoHang'),
 ('Q5', 'Bán hàng', 'qlBanHang'),
 ('Q6', 'Kho hàng', 'qlKhoHang');
 
@@ -511,6 +517,7 @@ ALTER TABLE `sanpham`
 ALTER TABLE `taikhoan`
   ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`MaNV`) REFERENCES `nhanvien` (`MaNV`),
   ADD CONSTRAINT `taikhoan_ibfk_2` FOREIGN KEY (`MaQuyen`) REFERENCES `phanquyen` (`MaQuyen`);
+SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

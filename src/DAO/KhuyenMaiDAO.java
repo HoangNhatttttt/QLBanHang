@@ -46,7 +46,7 @@ public class KhuyenMaiDAO {
     public ArrayList<ChiTietKMDTO> doc_CTKM(String maKM){
         ArrayList dsCTKM = new ArrayList<ChiTietKMDTO>();
         try {
-            String qry="SELECT chtrinhkhuyenmai.MaCTKM, TenKhuyenMai, TenSP, PhanTramGiamGia FROM chtrinhkhuyenmai "
+            String qry="SELECT chtrinhkhuyenmai.MaCTKM, TenKhuyenMai, chitietkhuyenmai.MaSP, TenSP, PhanTramGiamGia FROM chtrinhkhuyenmai "
                     + "JOIN chitietkhuyenmai ON chtrinhkhuyenmai.MaCTKM = chitietkhuyenmai.MaCTKM "
                     + "JOIN sanpham ON sanpham.MaSP = chitietkhuyenmai.MaSP WHERE chtrinhkhuyenmai.MaCTKM = ?";
             Connection conn=Connector.getConnection();
@@ -57,8 +57,9 @@ public class KhuyenMaiDAO {
                 ChiTietKMDTO ct= new ChiTietKMDTO();
                 ct.maKM=rs.getString(1);
                 ct.tenKM=rs.getString(2);
-                ct.tenSP=rs.getString(3);
-                ct.phanTram=rs.getString(4);
+                ct.maSP=rs.getString(3);
+                ct.tenSP=rs.getString(4);
+                ct.phanTram=rs.getString(5);
                 dsCTKM.add(ct);
             }
         }

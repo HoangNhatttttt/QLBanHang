@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2025 at 01:59 AM
+-- Generation Time: Dec 11, 2025 at 02:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -66,27 +66,8 @@ CREATE TABLE `chitietkhuyenmai` (
 --
 
 INSERT INTO `chitietkhuyenmai` (`MaCTKM`, `MaSP`, `PhanTramGiamGia`) VALUES
-('KM1', '1', 10.00),
-('KM1', '2', 15.00),
-('KM1', '3', 10.00),
-('KM1', '4', 20.00),
-('KM1', '5', 15.00),
-('KM2', '10', 50.00),
-('KM2', '6', 50.00),
-('KM2', '7', 50.00),
-('KM2', '8', 50.00),
-('KM2', '9', 50.00),
-('KM3', '11', 30.00),
-('KM3', '12', 30.00),
-('KM3', '13', 30.00),
-('KM4', '14', 25.00),
-('KM4', '15', 25.00),
-('KM4', '16', 25.00),
-('KM4', '17', 25.00),
-('KM5', '18', 40.00),
-('KM5', '19', 40.00),
-('KM5', '20', 40.00),
-('KM5', '21', 40.00);
+('KM1', '10', 20.00),
+('KM1', '1', 20.00);
 
 -- --------------------------------------------------------
 
@@ -390,8 +371,8 @@ ALTER TABLE `chitiethoadon`
 -- Indexes for table `chitietkhuyenmai`
 --
 ALTER TABLE `chitietkhuyenmai`
-  ADD PRIMARY KEY (`MaCTKM`,`MaSP`),
-  ADD KEY `MaSP` (`MaSP`);
+  ADD KEY `chitietkhuyenmai_ibfk_1` (`MaCTKM`),
+  ADD KEY `chitietkhuyenmai_ibfk_2` (`MaSP`);
 
 --
 -- Indexes for table `chitietphieunhap`
@@ -481,8 +462,8 @@ ALTER TABLE `chitiethoadon`
 -- Constraints for table `chitietkhuyenmai`
 --
 ALTER TABLE `chitietkhuyenmai`
-  ADD CONSTRAINT `chitietkhuyenmai_ibfk_1` FOREIGN KEY (`MaCTKM`) REFERENCES `chtrinhkhuyenmai` (`MaCTKM`),
-  ADD CONSTRAINT `chitietkhuyenmai_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`);
+  ADD CONSTRAINT `chitietkhuyenmai_ibfk_1` FOREIGN KEY (`MaCTKM`) REFERENCES `chtrinhkhuyenmai` (`MaCTKM`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `chitietkhuyenmai_ibfk_2` FOREIGN KEY (`MaSP`) REFERENCES `sanpham` (`MaSP`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `chitietphieunhap`

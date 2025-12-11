@@ -88,6 +88,7 @@
                               </Group>
                           </Group>
                       </Group>
+                      <Component id="jCheckBox14" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -97,7 +98,7 @@
                       <Component id="jCheckBox12" min="-2" max="-2" attributes="0"/>
                       <Component id="jCheckBox13" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="25" max="32767" attributes="0"/>
+                  <EmptySpace pref="79" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -143,8 +144,11 @@
                       <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="jCheckBox13" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jCheckBox13" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBox14" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="57" max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnHuy" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="btnSua" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -245,6 +249,11 @@
         <Component class="javax.swing.JCheckBox" name="jCheckBox13">
           <Properties>
             <Property name="text" type="java.lang.String" value="Ph&#xe2;n quy&#x1ec1;n"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBox14">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kho h&#xe0;ng"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnHuy">

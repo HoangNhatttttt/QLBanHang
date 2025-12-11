@@ -68,6 +68,7 @@ public class ThongKePanel extends javax.swing.JPanel {
         leftPanel.add(boxA);
         leftPanel.add(boxB);
         leftPanel.add(boxC);
+        leftPanel.add(createTable);
         leftPanel.add(dateFromPanel);
         leftPanel.add(dateToPanel);
         leftPanel.add(boxQuy);
@@ -86,8 +87,8 @@ public class ThongKePanel extends javax.swing.JPanel {
         dateFromPanel.setVisible(false);
         dateToPanel.setVisible(false);
         boxTrongNam.setVisible(false);
-        JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        rightPanel.add(createTable);
+        JPanel rightPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        
         
         // Main top panel with BorderLayout
             JPanel topPanel = new JPanel(new BorderLayout());
@@ -189,7 +190,8 @@ public class ThongKePanel extends javax.swing.JPanel {
             }
         });
 
-        boxQuy.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quý năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxQuy.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Quý năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxQuy.setPreferredSize(new java.awt.Dimension(133, 46));
 
         javax.swing.GroupLayout boxQuyLayout = new javax.swing.GroupLayout(boxQuy);
         boxQuy.setLayout(boxQuyLayout);
@@ -206,7 +208,8 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(quy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxTuNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Từ năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxTuNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Từ năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxTuNam.setPreferredSize(new java.awt.Dimension(133, 46));
 
         javax.swing.GroupLayout boxTuNamLayout = new javax.swing.GroupLayout(boxTuNam);
         boxTuNam.setLayout(boxTuNamLayout);
@@ -223,7 +226,8 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(tuNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxDenNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đến năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxDenNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đến năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxDenNam.setPreferredSize(new java.awt.Dimension(133, 46));
 
         javax.swing.GroupLayout boxDenNamLayout = new javax.swing.GroupLayout(boxDenNam);
         boxDenNam.setLayout(boxDenNamLayout);
@@ -236,11 +240,12 @@ public class ThongKePanel extends javax.swing.JPanel {
         boxDenNamLayout.setVerticalGroup(
             boxDenNamLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, boxDenNamLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addGap(0, 2, Short.MAX_VALUE)
                 .addComponent(denNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxTuThang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Từ tháng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxTuThang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Từ tháng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxTuThang.setPreferredSize(new java.awt.Dimension(133, 47));
 
         javax.swing.GroupLayout boxTuThangLayout = new javax.swing.GroupLayout(boxTuThang);
         boxTuThang.setLayout(boxTuThangLayout);
@@ -257,7 +262,8 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(tuThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxDenThang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đến tháng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxDenThang.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Đến tháng", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxDenThang.setPreferredSize(new java.awt.Dimension(155, 46));
 
         javax.swing.GroupLayout boxDenThangLayout = new javax.swing.GroupLayout(boxDenThang);
         boxDenThang.setLayout(boxDenThangLayout);
@@ -274,7 +280,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(denThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        boxTrongNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Trong năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 14), new java.awt.Color(0, 0, 0))); // NOI18N
+        boxTrongNam.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Trong năm", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(0, 0, 0))); // NOI18N
 
         javax.swing.GroupLayout boxTrongNamLayout = new javax.swing.GroupLayout(boxTrongNam);
         boxTrongNam.setLayout(boxTrongNamLayout);
@@ -296,12 +302,24 @@ public class ThongKePanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(527, 527, 527)
+                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(boxTrongNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(boxA, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(boxB, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(boxC, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(createTable, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(boxA, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boxB, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(boxC, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(boxQuy, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -315,18 +333,7 @@ public class ThongKePanel extends javax.swing.JPanel {
                         .addComponent(boxTuThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(boxDenThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 84, Short.MAX_VALUE)
-                        .addComponent(createTable)
-                        .addGap(42, 42, 42))))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(527, 527, 527)
-                        .addComponent(title, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(boxTrongNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -337,19 +344,24 @@ public class ThongKePanel extends javax.swing.JPanel {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 1, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(boxQuy, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(boxA, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(boxB, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(boxC, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(boxTuNam, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(boxDenNam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(boxTuThang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(createTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(boxDenThang, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(boxTrongNam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(350, 350, 350))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(boxTuThang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(boxDenNam, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                            .addComponent(boxTuNam, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                            .addComponent(boxQuy, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
+                            .addComponent(boxDenThang, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
+                        .addComponent(boxTrongNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(538, 538, 538))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(boxA, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(boxB, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(boxC, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(createTable, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -418,54 +430,54 @@ public class ThongKePanel extends javax.swing.JPanel {
         }
 
         // 2) Determine date range and column labels
-            List<String> columns = new ArrayList<>();
-            String fromDate = "1970-01-01", toDate = "9999-12-31";
+        List<String> columns = new ArrayList<>();
+        String fromDate = "1970-01-01", toDate = "9999-12-31";
 
-            // these need to be visible in the pivot loop:
-            int startMonth = 1, endMonth = 12, yearForMonth = 0;
+        // these need to be visible in the pivot loop:
+        int startMonth = 1, endMonth = 12, yearForMonth = 0;
 
-            switch (timeGroup) {
-              case "Tháng":
-                startMonth  = Integer.parseInt(tuThang.getText());
-                endMonth    = Integer.parseInt(denThang.getText());
-                yearForMonth= Integer.parseInt(trongNam.getText());
-                fromDate = String.format("%04d-%02d-01", yearForMonth, startMonth);
-                toDate   = String.format("%04d-%02d-31", yearForMonth, endMonth);
-                for (int m = startMonth; m <= endMonth; m++) {
-                  columns.add("Tháng " + m);
-                }
-                break;
+        switch (timeGroup) {
+            case "Tháng":
+            startMonth  = Integer.parseInt(tuThang.getText());
+            endMonth    = Integer.parseInt(denThang.getText());
+            yearForMonth= Integer.parseInt(trongNam.getText());
+            fromDate = String.format("%04d-%02d-01", yearForMonth, startMonth);
+            toDate   = String.format("%04d-%02d-31", yearForMonth, endMonth);
+            for (int m = startMonth; m <= endMonth; m++) {
+                columns.add("Tháng " + m);
+            }
+            break;
             case "Quý":
-                // quy is the year
-                int y = Integer.parseInt(quy.getText());
-                // restrict to that year:
-                fromDate = y + "-01-01";
-                toDate   = y + "-12-31";
-                columns.addAll(List.of("Q1", "Q2", "Q3", "Q4"));
-                break;
+            // quy is the year
+            int y = Integer.parseInt(quy.getText());
+            // restrict to that year:
+            fromDate = y + "-01-01";
+            toDate   = y + "-12-31";
+            columns.addAll(List.of("Q1", "Q2", "Q3", "Q4"));
+            break;
 
             case "Năm":
-                int y1 = Integer.parseInt(tuNam.getText());
-                int y2 = Integer.parseInt(denNam.getText());
-                for (int yr = y1; yr <= y2; yr++) {
-                    columns.add(String.valueOf(yr));
-                }
-                break;
+            int y1 = Integer.parseInt(tuNam.getText());
+            int y2 = Integer.parseInt(denNam.getText());
+            for (int yr = y1; yr <= y2; yr++) {
+                columns.add(String.valueOf(yr));
+            }
+            break;
 
             case "Trong vùng...":
-                JDateChooser fromCal = (JDateChooser) dateFromPanel.getComponent(0);
-                JDateChooser toCal   = (JDateChooser) dateToPanel.getComponent(0);
-                if (fromCal.getDate()==null || toCal.getDate()==null) {
-                    JOptionPane.showMessageDialog(this, "Xin chọn cả Từ ngày và Đến ngày.", "Error", JOptionPane.ERROR_MESSAGE);
-                    return;
-                }
-                fromDate = simpleDate(fromCal.getDate());
-                toDate   = simpleDate(toCal.getDate());
-                columns.add(fromDate + " → " + toDate);
-                break;
+            JDateChooser fromCal = (JDateChooser) dateFromPanel.getComponent(0);
+            JDateChooser toCal   = (JDateChooser) dateToPanel.getComponent(0);
+            if (fromCal.getDate()==null || toCal.getDate()==null) {
+                JOptionPane.showMessageDialog(this, "Xin chọn cả Từ ngày và Đến ngày.", "Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+            fromDate = simpleDate(fromCal.getDate());
+            toDate   = simpleDate(toCal.getDate());
+            columns.add(fromDate + " → " + toDate);
+            break;
         }
         // Always add the “TC” column:
-        columns.add("TC");
+        columns.add("Tổng cộng");
 
         // 3) Fetch + optional date-filter
         ArrayList<ThongKeDTO> all = thongKeBUS.getAllThongKe();
@@ -480,28 +492,28 @@ public class ThongKePanel extends javax.swing.JPanel {
             double value;
 
             switch (timeGroup) {
-              case "Tháng":
+                case "Tháng":
                 // extract the month from the invoice date
                 int mon = dto.getHoadon().getNgayLapHD().getMonthValue();
                 // only count if within range
                 if (mon < startMonth || mon > endMonth) continue;
-                bucket = mon - startMonth; 
+                bucket = mon - startMonth;
                 value  = dto.getHoadon().getTongTien().doubleValue();
                 break;
 
-              case "Quý":
+                case "Quý":
                 int q = (dto.getHoadon().getNgayLapHD().getMonthValue() - 1) / 3;
                 bucket = q;
                 value  = dto.getHoadon().getTongTien().doubleValue();
                 break;
 
-              case "Năm":
+                case "Năm":
                 int yr = dto.getHoadon().getNgayLapHD().getYear();
                 bucket = yr - Integer.parseInt(tuNam.getText());
                 value  = dto.getHoadon().getTongTien().doubleValue();
                 break;
 
-              default: // Trong vùng...
+                default: // Trong vùng...
                 bucket = 0;
                 value  = dto.getHoadon().getTongTien().doubleValue();
             }
@@ -511,16 +523,16 @@ public class ThongKePanel extends javax.swing.JPanel {
             if ("Khách hàng".equals(typeB)) key = dto.getKhachhang().getMaKH();
             else if ("Nhân viên".equals(typeB)) key = dto.getNhanvien().getMaNV();
             else {
-              // sản phẩm
-              for (ChiTietHoaDonDTO c : dto.getDsChiTiet()) {
-                String sp = c.getMaSP();
-                pivot.putIfAbsent(sp, new double[columns.size()]);
-                int b = bucket; // same bucket
-                double v = c.getThanhTien();
-                pivot.get(sp)[b]           += v;
-                pivot.get(sp)[columns.size()-1] += v;
-              }
-              continue; // skip below for products
+                // sản phẩm
+                for (ChiTietHoaDonDTO c : dto.getDsChiTiet()) {
+                    String sp = c.getMaSP();
+                    pivot.putIfAbsent(sp, new double[columns.size()]);
+                    int b = bucket; // same bucket
+                    double v = c.getThanhTien();
+                    pivot.get(sp)[b]           += v;
+                    pivot.get(sp)[columns.size()-1] += v;
+                }
+                continue; // skip below for products
             }
 
             // now for KH or NV
@@ -553,7 +565,7 @@ public class ThongKePanel extends javax.swing.JPanel {
             r++;
         }
         // final TC row
-        data[r][0] = "TC";
+        data[r][0] = "Tổng cộng";
         for (int c=1; c<colNames.length; c++) {
             double sum=0;
             for (int i=0; i<rows-1; i++) {

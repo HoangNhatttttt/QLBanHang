@@ -778,8 +778,8 @@ public class FormBanHang extends javax.swing.JPanel {
         }
         
         // Thêm hoá đơn
-        String maKH = "1";
-        String maNV = "1";
+        String maKH = jComboBox1.getSelectedItem().toString().split(" - ")[0];
+        String maNV = txtNhanVien.getText().split(" - ")[0];
         
         BigDecimal tongTien = new BigDecimal(txtThanhTien.getText().replace(",", ""));
         

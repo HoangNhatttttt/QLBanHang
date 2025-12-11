@@ -82,6 +82,7 @@ public class SuaQuyenForm extends javax.swing.JFrame {
         jCheckBox11 = new javax.swing.JCheckBox();
         jCheckBox12 = new javax.swing.JCheckBox();
         jCheckBox13 = new javax.swing.JCheckBox();
+        jCheckBox14 = new javax.swing.JCheckBox();
         btnHuy = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
 
@@ -124,6 +125,8 @@ public class SuaQuyenForm extends javax.swing.JFrame {
 
         jCheckBox13.setText("Phân quyền");
 
+        jCheckBox14.setText("Kho hàng");
+
         btnHuy.setText("Hủy");
 
         btnSua.setText("Cập nhật");
@@ -165,7 +168,8 @@ public class SuaQuyenForm extends javax.swing.JFrame {
                             .addGap(18, 18, 18)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(txtMaQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(txtTenQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtTenQuyen, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jCheckBox14))
                 .addGap(27, 27, 27)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jCheckBox11)
@@ -173,7 +177,7 @@ public class SuaQuyenForm extends javax.swing.JFrame {
                     .addComponent(jCheckBox5)
                     .addComponent(jCheckBox12)
                     .addComponent(jCheckBox13))
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -211,8 +215,10 @@ public class SuaQuyenForm extends javax.swing.JFrame {
                     .addComponent(jCheckBox12)
                     .addComponent(jCheckBox4))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox13)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox13)
+                    .addComponent(jCheckBox14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnHuy)
                     .addComponent(btnSua))
@@ -246,6 +252,7 @@ public class SuaQuyenForm extends javax.swing.JFrame {
     private javax.swing.JCheckBox jCheckBox11;
     private javax.swing.JCheckBox jCheckBox12;
     private javax.swing.JCheckBox jCheckBox13;
+    private javax.swing.JCheckBox jCheckBox14;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
     private javax.swing.JCheckBox jCheckBox4;
@@ -280,6 +287,7 @@ public class SuaQuyenForm extends javax.swing.JFrame {
         jCheckBox11.setSelected(chiTietQuyen.contains("qlPhieuNhap"));
         jCheckBox12.setSelected(chiTietQuyen.contains("qlThongKe"));
         jCheckBox13.setSelected(chiTietQuyen.contains("qlQuyen"));
+        jCheckBox14.setSelected(chiTietQuyen.contains("qlKhoHang"));
     }
     
     // Phương thức để tạo chuỗi chi tiết quyền từ các checkbox
@@ -322,11 +330,12 @@ public class SuaQuyenForm extends javax.swing.JFrame {
         if (jCheckBox12.isSelected()) {
             chiTiet.append("qlThongKe ");
         }
-        
         if (jCheckBox13.isSelected()) {
             chiTiet.append("qlQuyen ");
         }
-        
+        if (jCheckBox14.isSelected()) {
+            chiTiet.append("qlKhoHang ");
+        }
         return chiTiet.toString().trim();
     }
     

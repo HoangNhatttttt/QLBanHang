@@ -56,7 +56,10 @@ public class KhuyenMaiGUI extends javax.swing.JPanel {
             public void removeUpdate(DocumentEvent e) { timKiem1(); }
             public void changedUpdate(DocumentEvent e) { timKiem1(); }
         });
+        
+        btnLamMoiActionPerformed();
     }
+    
     public KhuyenMaiGUI(DefaultTableModel model3) {
         initComponents();
         this.model3=model3;
@@ -70,6 +73,7 @@ public class KhuyenMaiGUI extends javax.swing.JPanel {
             public void removeUpdate(DocumentEvent e) { timKiem1(); }
             public void changedUpdate(DocumentEvent e) { timKiem1(); }
         });
+        
     }
 
     /**
@@ -440,6 +444,41 @@ public class KhuyenMaiGUI extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_tblDSKMMouseClicked
 
+    private void btnLamMoiActionPerformed() {                                          
+        // TODO add your handling code here:
+        txtTimKiem.setText("");
+        cboTimKiem.setSelectedItem("Tất cả");
+
+        model3.setRowCount(0); // Xóa dữ liệu cũ
+        KhuyenMaiBUS bus = new KhuyenMaiBUS();
+        bus.doc_DSKM();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        int i = 1; 
+        for(KhuyenMaiDTO km : KhuyenMaiBUS.dsKM){
+            Vector row = new Vector();
+            row.add(i++);
+            row.add(km.maKM);
+            row.add(km.tenKM);
+            row.add(km.ngayBD);
+            row.add(km.ngayKT);
+            // So sánh ngày kết thúc với ngày hiện tại
+            try {
+                LocalDate ngayKT = LocalDate.parse(km.ngayKT, formatter);
+                LocalDate today = LocalDate.now();
+                if (ngayKT.isBefore(today)) {
+                    row.add("Đã kết thúc");
+                } else {
+                    row.add("Chưa kết thúc");
+                }
+            } catch (DateTimeParseException e) {
+                row.add("Không hợp lệ");
+            }
+
+            model3.addRow(row);
+        }
+        tblDSKM.setModel(model3);
+    }
+    
     private void btnLamMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLamMoiActionPerformed
         // TODO add your handling code here:
         txtTimKiem.setText("");

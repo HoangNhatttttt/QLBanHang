@@ -22,12 +22,30 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="527" max="-2" attributes="0"/>
+                      <Component id="title" min="-2" pref="272" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="boxTrongNam" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="boxA" min="-2" pref="119" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="boxB" min="-2" pref="119" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="boxC" min="-2" pref="119" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="createTable" min="-2" pref="125" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Component id="boxA" min="-2" pref="119" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="boxB" min="-2" pref="119" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="boxC" min="-2" pref="119" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="boxQuy" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -41,24 +59,9 @@
                       <Component id="boxTuThang" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="boxDenThang" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="84" max="32767" attributes="0"/>
-                      <Component id="createTable" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                      <EmptySpace min="42" max="32767" attributes="0"/>
                   </Group>
               </Group>
-          </Group>
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="527" max="-2" attributes="0"/>
-                      <Component id="title" min="-2" pref="272" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="boxTrongNam" min="-2" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
-              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -71,21 +74,29 @@
               <Component id="jSeparator1" min="-2" pref="1" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="boxQuy" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="boxA" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="boxB" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
-                      <Component id="boxC" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="boxTuThang" alignment="0" max="32767" attributes="0"/>
+                          <Component id="boxDenNam" alignment="0" pref="47" max="32767" attributes="0"/>
+                          <Component id="boxTuNam" alignment="0" pref="47" max="32767" attributes="0"/>
+                          <Component id="boxQuy" alignment="0" pref="47" max="32767" attributes="0"/>
+                          <Component id="boxDenThang" pref="47" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="31" max="32767" attributes="0"/>
+                      <Component id="boxTrongNam" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="538" max="-2" attributes="0"/>
                   </Group>
-                  <Component id="boxTuNam" alignment="1" max="32767" attributes="0"/>
-                  <Component id="boxDenNam" alignment="0" max="32767" attributes="0"/>
-                  <Component id="boxTuThang" alignment="0" max="32767" attributes="0"/>
-                  <Component id="createTable" alignment="0" max="32767" attributes="0"/>
-                  <Component id="boxDenThang" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="boxA" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="boxB" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                          <Component id="boxC" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="createTable" min="-2" pref="32" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="boxTrongNam" max="32767" attributes="0"/>
-              <EmptySpace min="-2" pref="350" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -191,6 +202,9 @@
             </TitledBorder>
           </Border>
         </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[133, 46]"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -224,6 +238,9 @@
               <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
             </TitledBorder>
           </Border>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[133, 46]"/>
         </Property>
       </Properties>
 
@@ -259,6 +276,9 @@
             </TitledBorder>
           </Border>
         </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[133, 46]"/>
+        </Property>
       </Properties>
 
       <Layout>
@@ -273,7 +293,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="2" max="32767" attributes="0"/>
                   <Component id="denNam" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -292,6 +312,9 @@
               <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
             </TitledBorder>
           </Border>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[133, 47]"/>
         </Property>
       </Properties>
 
@@ -326,6 +349,9 @@
               <Color PropertyName="color" blue="0" green="0" red="0" type="rgb"/>
             </TitledBorder>
           </Border>
+        </Property>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[155, 46]"/>
         </Property>
       </Properties>
 
